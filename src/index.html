@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/img/flame-svgrepo-com.svg"
+      type="image/x-icon" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <script
+      src="https://kit.fontawesome.com/914d16b2a1.js"
+      crossorigin="anonymous"></script>
+    <title>Hot&Cold</title>
+  </head>
+  <body class="bg-[#e7e1bb] scrollbar-none">
+    <header class="py-6 px-12 max-sm:px-8">
+      <nav class="flex justify-between items-center text-center">
+        <h1 class="text-3xl font-extrabold text-red-500">
+          Hot<span
+            class="font-extralight absolute left-[4.4rem] top-4 opacity-9 text-[4.5rem] text-[#F77F00] z-[-1]"
+            >&</span
+          >
+          <span class="font-mono text-3xl font-extrabold text-blue-600"
+            >Cold</span
+          >
+        </h1>
+        <button
+          id="menu"
+          class="py-2 px-6 font-semibold hover:text-white ring-2 ring-gray-700 hover:bg-black shadow-xl shadow-gray-800 hover:shadow-white active:scale-95 transition-all">
+          Menu
+        </button>
+      </nav>
+    </header>
+    <main>
+      <!--Welcome Sign-->
+
+      <div
+        class="grid justify-center text-center h-screen bg-[url('/img/bg.png')] bg-cover bg-center bg-no-repeat">
+        <span
+          class="relative top-[14rem] font-bold text-2xl sm:text-5xl text-[#FCBF49]"
+          >WELCOME TO OUR RESURANT</span
+        >
+        <p class="font-mono text-[1rem] sm:text-2xl text-white">
+          One Of The Best Resturant Check It Out.
+        </p>
+      </div>
+      <div class="grid text-center w-[100%]">
+        <span
+          class="relative top-8 text-[#003049] leading-[4rem] text-4xl text-center sm:text-[4rem] font-mono"
+          >Most Populer Plates</span
+        >
+      </div>
+
+      <!--Photo Section-->
+
+      <section
+        class="w-[100] flex items-center gap-8 overflow-auto scroll-smooth scrollbar-thumb-gray-700 scrollbar-thumb-rounded-full scrollbar-thin py-4 my-[8rem] px-4">
+        <img
+          id="slider"
+          class="relative rounded-md transition-all"
+          src="/img/food on plate 0.png"
+          alt="Food"
+          loading="lazy"
+          width="300px" />
+        <img
+          class="relative rounded-md transition-all"
+          src="/img/food on plate 1.png"
+          alt="Food"
+          width="300px" />
+
+        <img
+          class="relative rounded-md transition-all"
+          src="/img/steak on plate 0.png"
+          alt="Food"
+          width="300px" />
+
+        <img
+          class="relative rounded-md transition-all"
+          src="/img/cold food on pl 0.png"
+          alt="Food"
+          width="300px" />
+
+        <img
+          class="relative rounded-md transition-all"
+          src="/img/cold food on pl 1.png"
+          alt="Food"
+          width="300px" />
+
+        <img
+          class="relative rounded-md transition-all"
+          src="/img/cold food on pl 1 (1).png"
+          alt="Food"
+          width="300px" />
+      </section>
+      <section class="grid justify-center text-center py-8">
+        <h1 class="font-bold text-5xl text-[#003049]">Table Reservation</h1>
+        <p class="py-6 text-3xl text-red-500">
+          Get Your <mark class="px-2 bg-[#ffd900] text-white">VIP</mark> Tabel
+        </p>
+        <button
+          id="sign"
+          class="mx-9 py-3 ring-2 ring-black items-center hover:bg-black hover:text-white active:scale-95 transition-all font-semibold">
+          Get Table
+        </button>
+      </section>
+
+      <!--Dialogs-->
+
+      <dialog
+        id="dia"
+        class="w-[500px] py-6 px-6 rounded-lg backdrop:bg-gray-400 backdrop:bg-opacity-30 ring-4 ring-blue-950 bg-gray-900">
+        <i
+          id="close"
+          class="cursor-pointer fa-solid fa-arrow-left fa-2xl text-red-600"></i>
+        <h1
+          class="text-center text-3xl text-blue-300 px-2 py-4 mb-2 border-b border-gray-400">
+          Reservation
+        </h1>
+        <form class="grid justify-center">
+          <input
+            id="userName"
+            class="py-1 px-2 ring-1 ring-gray-400 my-4 rounded-sm"
+            type="text"
+            placeholder="Name"
+            required />
+          <input
+            id="em"
+            class="py-1 px-2 ring-1 ring-gray-400 my-2 rounded-sm"
+            type="email"
+            placeholder="Email"
+            required />
+          <input
+            id="num"
+            class="py-1 px-2 ring-1 ring-gray-400 my-4 rounded-sm"
+            type="number"
+            placeholder="Phone Number"
+            required />
+
+          <button
+            id="check"
+            class="mt-4 mb-4 py-2 px-4 bg-blue-800 rounded-sm text-white hover:bg-blue-600 hover:ring-blue-800 hover:ring-2 transition-all active:scale-95"
+            type="submit">
+            Submit
+          </button>
+          <button
+            id="load"
+            type="button"
+            class="hidden mt-4 mb-4 py-2 px-4 bg-blue-800 rounded-sm text-white hover:bg-blue-600 hover:ring-blue-800 hover:ring-2 transition-all active:scale-95">
+            Checking...
+            <svg
+              aria-hidden="true"
+              role="status"
+              class="inline w-4 h-4 mr-3 text-white animate-spin"
+              viewBox="0 0 100 101"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                fill="#E5E7EB" />
+              <path
+                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                fill="currentColor" />
+            </svg>
+          </button>
+        </form>
+      </dialog>
+      <dialog
+        id="modal"
+        class="hidden flex-col text-center px-6 py-4 w-[500px] bg-gray-900 rounded-lg backdrop:bg-gray-400 backdrop:bg-opacity-30">
+        <span class="text-green-400 font-bold text-4xl mt-6 my-8"
+          >Succes !!</span
+        >
+        <div class="grid justify-start text-left">
+          <span class="font-semibold text-blue-300 text-2xl mt-6"
+            >Tabel Number : <span class="text-white text-lg" id="tbNum"></span
+          ></span>
+          <span class="font-semibold text-blue-300 text-2xl"
+            >Free Time at : <span class="text-white text-lg" id="when"></span
+          ></span>
+        </div>
+        <div class="grid grid-cols-2 justify-center items-center gap-x-10">
+          <button
+            onclick="ty()"
+            class="py-2 px-8 mt-8 bg-green-600 hover:bg-green-400 hover:ring-green-600 hover:ring-2 rounded-sm transition-all text-white">
+            Perfect..!
+          </button>
+          <button
+            id="refresh"
+            class="py-2 px-10 mt-8 font-semibold bg-white border-green-500 border hover:bg-green-400 hover:ring-green-600 hover:ring-2 hover:text-white rounded-sm transition-all">
+            Refresh
+          </button>
+        </div>
+      </dialog>
+      <dialog
+        id="modalTwo"
+        class="bg-gray-800 w-[700px] px-8 py-10 rounded-lg backdrop:bg-slate-400 backdrop:bg-opacity-30 scrollbar-thumb-white scrollbar-thin scrollbar-thumb-rounded-full">
+        <i
+          id="closeMenu"
+          class="cursor-pointer fa-solid fa-arrow-left fa-2xl text-white"></i>
+
+        <h1
+          class="text-center text-white font-bold text-4xl border-b-white border-b mb-10 pb-8">
+          MENU
+        </h1>
+        <span
+          class="font-bold text-red-800 ring-red-600 ring-1 px-4 mb-6 bg-white text-5xl max-md:text-3xl"
+          >Hot Food</span
+        >
+
+        <!--HOT FOOD-->
+
+        <div class="grid grid-cols-2 mb-14">
+          <div>
+            <ul class="flex flex-col items-start gap-y-4 px-4 py-6">
+              <li class="text-white font-mono text-2xl max-md:text-xs">
+                Pasta & chesse
+              </li>
+              <li class="text-white font-mono text-2xl max-md:text-base">
+                Steak
+              </li>
+              <li class="text-white font-mono text-2xl max-md:text-base">
+                Lamp heart
+              </li>
+              <li class="text-white font-mono text-2xl max-md:text-base">
+                Burger
+              </li>
+              <li class="text-white font-mono text-2xl max-md:text-base">
+                Pizza
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-xs">
+                Chicken Wings
+              </li>
+              <li class="text-white font-mono text-2xl max-md:text-base">
+                Fries
+              </li>
+              <li class="text-white font-mono text-2xl max-md:text-base">
+                Turcky
+              </li>
+              <li class="text-white font-mono text-2xl max-md:text-base">
+                Sea Food
+              </li>
+              <li class="text-white font-mono text-2xl max-md:text-base">
+                Shrimp
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul
+              class="flex flex-col items-center gap-y-4 max-sm:gap-5 px-4 py-6">
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm max-sm:pt-2">
+                15.35$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                32.50$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                28.00$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                12.00$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                20.25$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                15.95$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                05.00$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                25.00$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                35.85$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                23.00$
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!--COlD DRINKS-->
+
+        <span
+          class="font-bold text-blue-800 ring-blue-600 ring-1 px-4 mb-6 bg-white text-5xl max-md:text-3xl">
+          Cold Drinks</span
+        >
+        <div class="grid grid-cols-2">
+          <div>
+            <ul
+              class="flex flex-col items-start gap-y-6 max-sm:gap-y-5 px-4 py-6">
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-xs">
+                Raspberry Fizz
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-xs">
+                Watermelon-Mint
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                Pineapple
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-xs">
+                Mango
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-xs">
+                Strawberry
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                Cola
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="flex flex-col items-center gap-y-6 px-4 py-6">
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                08.00$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                12.30$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                15.00$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                10.00$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                09.00$
+              </li>
+              <li
+                class="text-white font-mono text-2xl max-md:text-base max-sm:text-sm">
+                06.00$
+              </li>
+            </ul>
+          </div>
+        </div>
+      </dialog>
+    </main>
+
+    <footer class="bg-[#003049] py-8 px-12 mt-12">
+      <h1 class="text-5xl font-extrabold text-red-500">
+        Hot<span
+          class="font-extralight left-[4.4rem] top-0 opacity-9 text-[1.5rem] text-[#F77F00] z-[-1]"
+          >&</span
+        >
+        <span
+          class="relative right-3 font-mono text-5xl font-extrabold text-blue-600"
+          >Cold</span
+        >
+      </h1>
+      <div
+        class="grid md:grid-cols-3 max-sm:grid-rows-3 mt-[5rem] items-center">
+        <div>
+          <i class="fa-solid fa-phone fa-lg text-yellow-600 mb-8"></i>
+          <label class="text-white text-lg px-4 font-mono">6548-545-45**</label
+          ><br />
+
+          <i class="fa-solid fa-envelope fa-lg text-yellow-600"></i>
+          <label class="text-white text-lg px-4 font-mono"
+            >example@mail.com</label
+          >
+        </div>
+        <div class="mt-[3rem]">
+          <ul
+            class="grid sm:grid-cols-2 sm:grid-rows-2 grid-cols-3 grid-rows-2 items-center gap-y-4 text-white font-mono">
+            <li
+              class="after:content-[''] w-[fit-content] after:block after:w-0 after:h-[2px] after:bg-blue-600 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out">
+              <a class="hover:text-red-500 transition-all" href="#">Serveis</a>
+            </li>
+            <li
+              class="after:content-[''] w-[fit-content] after:block after:w-0 after:h-[2px] after:bg-blue-600 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out">
+              <a class="hover:text-red-500 transition-all" href="#">FAQ</a>
+            </li>
+            <li
+              class="after:content-[''] w-[fit-content] after:block after:w-0 after:h-[2px] after:bg-blue-600 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out">
+              <a class="hover:text-red-500 transition-all" href="#">Chefs</a>
+            </li>
+            <li
+              class="after:content-[''] w-[fit-content] after:block after:w-0 after:h-[2px] after:bg-blue-600 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out">
+              <a class="hover:text-red-500 transition-all" href="#">Stars</a>
+            </li>
+            <li
+              class="after:content-[''] w-[fit-content] after:block after:w-0 after:h-[2px] after:bg-blue-600 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out">
+              <a class="hover:text-red-500 transition-all" href="#">Menu</a>
+            </li>
+            <li
+              class="after:content-[''] w-[fit-content] after:block after:w-0 after:h-[2px] after:bg-blue-600 hover:after:w-full after:transition-all after:duration-500 after:ease-in-out">
+              <a class="hover:text-red-500 transition-all" href="#"
+                >Best Price</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div
+          class="grid justify-center items-center grid-cols-3 px-10 text-white">
+          <i
+            class="fa-brands fa-facebook-f fa-2xl hover:text-[#496c9b] transition-all cursor-pointer"></i>
+          <i
+            class="fa-brands fa-x-twitter fa-2xl hover:text-black transition-all cursor-pointer"></i>
+          <i
+            class="fa-brands fa-instagram fa-2xl hover:text-yellow-700 transition-all cursor-pointer"></i>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
