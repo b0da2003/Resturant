@@ -3,9 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
-      backgroundImage: {
+      backgroundImage: theme => ({
         mainBG: 'url("../img/bg.png")',
-      },
+      }),
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
