@@ -2,11 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {
-      backgroundImage: {
-        mainBG: 'url("../img/bg.png")',
-      },
-    },
+    extend: {},
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
